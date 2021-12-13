@@ -4,8 +4,8 @@ let postId = 1;
 const posts = [
   {
     id: 1,
-    title: 'Title',
-    body: 'Body',
+    title: 'Test Title',
+    body: 'Test Body',
   },
 ];
 

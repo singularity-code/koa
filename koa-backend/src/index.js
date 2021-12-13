@@ -1,5 +1,6 @@
 const Koa = require('koa');
 const Router = require('koa-router');
+const bodyParser = require('koa-bodyparser');
 
 const api = require('./api');
 
@@ -9,7 +10,10 @@ const router = new Router();
 // get, post, put, delete
 router.use('/api', api.routes());
 
-// apply router middleware
+//apply parser before router
+app.use(bodyParser());
+
+// apply router to the instance
 app.use(router.routes()).use(router.allowedMethods());
 
 app.listen(4000, () => {
